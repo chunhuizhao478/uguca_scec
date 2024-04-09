@@ -465,17 +465,17 @@ TPV102/fast:
 .PHONY : TPV102/fast
 
 #=============================================================================
-# Target rules for targets named TPV103
+# Target rules for targets named TPV103-2d
 
 # Build rule for target.
-TPV103: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TPV103
-.PHONY : TPV103
+TPV103-2d: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TPV103-2d
+.PHONY : TPV103-2d
 
 # fast build rule for target.
-TPV103/fast:
-	$(MAKE) $(MAKESILENT) -f benchmarks/TPV103/CMakeFiles/TPV103.dir/build.make benchmarks/TPV103/CMakeFiles/TPV103.dir/build
-.PHONY : TPV103/fast
+TPV103-2d/fast:
+	$(MAKE) $(MAKESILENT) -f benchmarks/TPV103/CMakeFiles/TPV103-2d.dir/build.make benchmarks/TPV103/CMakeFiles/TPV103-2d.dir/build
+.PHONY : TPV103-2d/fast
 
 #=============================================================================
 # Target rules for targets named TPV104
@@ -567,7 +567,7 @@ help:
 	@echo "... RELEASE_INFO"
 	@echo "... TPV101-2d"
 	@echo "... TPV102"
-	@echo "... TPV103"
+	@echo "... TPV103-2d"
 	@echo "... TPV104"
 	@echo "... TPV205-2D"
 	@echo "... TPV3"

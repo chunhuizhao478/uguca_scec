@@ -28,6 +28,6 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with uguca.  If not, see <https://www.gnu.org/licenses/>.
 ####
-add_simulation(TPV103 TPV103.cc)
-configure_file(TPV103.sh COPYONLY)
-configure_file(result_summary.py COPYONLY)
+add_simulation(TPV103-2d TPV103-2d.cc)
+configure_file(TPV103.sh TPV103-2d.sh COPYONLY)
+configure_file(result_summary.py result_summary.py COPYONLY)

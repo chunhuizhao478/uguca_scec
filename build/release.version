@@ -1,0 +1,190 @@
+origin	https://github.com/chunhuizhao478/uguca_scec (fetch)
+origin	https://github.com/chunhuizhao478/uguca_scec (push)
+709d6fc84d01efd9c2a737a4fcaa6d5e8d02fc65
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   benchmarks/.DS_Store
+	modified:   benchmarks/TPV103/CMakeLists.txt
+	modified:   benchmarks/TPV103/TPV103-2d.cc
+	modified:   build/CMakeFiles/3.27.5/CMakeDetermineCompilerABI_C.bin
+	modified:   build/CMakeFiles/3.27.5/CMakeDetermineCompilerABI_CXX.bin
+	modified:   build/CMakeFiles/CMakeConfigureLog.yaml
+	modified:   build/CMakeFiles/FindMPI/test_mpi_C.bin
+	modified:   build/CMakeFiles/FindMPI/test_mpi_CXX.bin
+	modified:   build/CMakeFiles/Makefile.cmake
+	modified:   build/CMakeFiles/Makefile2
+	modified:   build/CMakeFiles/TargetDirectories.txt
+	modified:   build/Makefile
+	deleted:    build/benchmarks/TPV101/CMakeFiles/TPV101-2d.dir/TPV101-2d.cc.o
+	deleted:    build/benchmarks/TPV101/CMakeFiles/TPV101-2d.dir/TPV101-2d.cc.o.d
+	deleted:    build/benchmarks/TPV101/TPV101-2d
+	deleted:    build/benchmarks/TPV102/CMakeFiles/TPV102.dir/TPV102.cc.o
+	deleted:    build/benchmarks/TPV102/CMakeFiles/TPV102.dir/TPV102.cc.o.d
+	deleted:    build/benchmarks/TPV102/TPV102
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/DependInfo.cmake
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/TPV103.cc.o
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/TPV103.cc.o.d
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/build.make
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/cmake_clean.cmake
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/compiler_depend.make
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/compiler_depend.ts
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/depend.make
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/flags.make
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/link.txt
+	deleted:    build/benchmarks/TPV103/CMakeFiles/TPV103.dir/progress.make
+	deleted:    build/benchmarks/TPV103/COPYONLY
+	modified:   build/benchmarks/TPV103/Makefile
+	deleted:    build/benchmarks/TPV103/TPV103
+	deleted:    build/benchmarks/TPV104/CMakeFiles/TPV104.dir/TPV104.cc.o
+	deleted:    build/benchmarks/TPV104/CMakeFiles/TPV104.dir/TPV104.cc.o.d
+	deleted:    build/benchmarks/TPV104/TPV104
+	deleted:    build/benchmarks/TPV205/CMakeFiles/TPV205-2D.dir/TPV205-2D.cc.o
+	deleted:    build/benchmarks/TPV205/CMakeFiles/TPV205-2D.dir/TPV205-2D.cc.o.d
+	deleted:    build/benchmarks/TPV205/TPV205-2D
+	deleted:    build/benchmarks/TPV3/CMakeFiles/TPV3.dir/TPV3.cc.o
+	deleted:    build/benchmarks/TPV3/CMakeFiles/TPV3.dir/TPV3.cc.o.d
+	deleted:    build/benchmarks/TPV3/TPV3
+	deleted:    build/examples/CMakeFiles/basic_example.dir/basic_example.cc.o
+	deleted:    build/examples/CMakeFiles/basic_example.dir/basic_example.cc.o.d
+	deleted:    build/examples/CMakeFiles/fracture_2d_example.dir/fracture_2d_example.cc.o
+	deleted:    build/examples/CMakeFiles/fracture_2d_example.dir/fracture_2d_example.cc.o.d
+	deleted:    build/examples/CMakeFiles/fracture_3d_example.dir/fracture_3d_example.cc.o
+	deleted:    build/examples/CMakeFiles/fracture_3d_example.dir/fracture_3d_example.cc.o.d
+	deleted:    build/examples/CMakeFiles/friction_2d_example.dir/friction_2d_example.cc.o
+	deleted:    build/examples/CMakeFiles/friction_2d_example.dir/friction_2d_example.cc.o.d
+	deleted:    build/examples/basic_example
+	deleted:    build/examples/fracture_2d_example
+	deleted:    build/examples/fracture_3d_example
+	deleted:    build/examples/friction_2d_example
+	modified:   build/release.patch
+	modified:   build/release.version
+	deleted:    build/src/CMakeFiles/uguca.dir/bimat_interface.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/bimat_interface.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/defrig_interface.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/defrig_interface.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/fftable_nodal_field.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/fftable_nodal_field.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/half_space.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/half_space.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/infinite_boundary.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/infinite_boundary.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_law.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_law.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/barras_law.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/barras_law.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/linear_coulomb_friction_law.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/linear_coulomb_friction_law.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/linear_shear_cohesive_law.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/linear_shear_cohesive_law.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/rate_and_state_law.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/interface_laws/rate_and_state_law.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/kernel.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/kernel.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/kernel_collection.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/kernel_collection.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/limited_history.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/limited_history.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/material.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/material.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/nodal_field.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/nodal_field.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/precomputed_kernel.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/precomputed_kernel.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/preint_kernel.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/preint_kernel.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/static_communicator_mpi.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/static_communicator_mpi.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_dumper.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_dumper.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_mesh.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_mesh.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_parameter_reader.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/uca_parameter_reader.cc.o.d
+	deleted:    build/src/CMakeFiles/uguca.dir/unimat_shear_interface.cc.o
+	deleted:    build/src/CMakeFiles/uguca.dir/unimat_shear_interface.cc.o.d
+	deleted:    build/src/libuguca.dylib
+	deleted:    build/test/CMakeFiles/test_barras_law.dir/test_barras_law.cc.o
+	deleted:    build/test/CMakeFiles/test_barras_law.dir/test_barras_law.cc.o.d
+	deleted:    build/test/CMakeFiles/test_bimat_interface.dir/test_bimat_interface.cc.o
+	deleted:    build/test/CMakeFiles/test_bimat_interface.dir/test_bimat_interface.cc.o.d
+	deleted:    build/test/CMakeFiles/test_defrig_interface.dir/test_defrig_interface.cc.o
+	deleted:    build/test/CMakeFiles/test_defrig_interface.dir/test_defrig_interface.cc.o.d
+	deleted:    build/test/CMakeFiles/test_dumper.dir/test_dumper.cc.o
+	deleted:    build/test/CMakeFiles/test_dumper.dir/test_dumper.cc.o.d
+	deleted:    build/test/CMakeFiles/test_fftable_nodal_field.dir/test_fftable_nodal_field.cc.o
+	deleted:    build/test/CMakeFiles/test_fftable_nodal_field.dir/test_fftable_nodal_field.cc.o.d
+	deleted:    build/test/CMakeFiles/test_half_space.dir/test_half_space.cc.o
+	deleted:    build/test/CMakeFiles/test_half_space.dir/test_half_space.cc.o.d
+	deleted:    build/test/CMakeFiles/test_infinite_boundary.dir/test_infinite_boundary.cc.o
+	deleted:    build/test/CMakeFiles/test_infinite_boundary.dir/test_infinite_boundary.cc.o.d
+	deleted:    build/test/CMakeFiles/test_interface.dir/test_interface.cc.o
+	deleted:    build/test/CMakeFiles/test_interface.dir/test_interface.cc.o.d
+	deleted:    build/test/CMakeFiles/test_kernel_collection.dir/test_kernel_collection.cc.o
+	deleted:    build/test/CMakeFiles/test_kernel_collection.dir/test_kernel_collection.cc.o.d
+	deleted:    build/test/CMakeFiles/test_limited_history.dir/test_limited_history.cc.o
+	deleted:    build/test/CMakeFiles/test_limited_history.dir/test_limited_history.cc.o.d
+	deleted:    build/test/CMakeFiles/test_linear_coulomb_friction_law.dir/test_linear_coulomb_friction_law.cc.o
+	deleted:    build/test/CMakeFiles/test_linear_coulomb_friction_law.dir/test_linear_coulomb_friction_law.cc.o.d
+	deleted:    build/test/CMakeFiles/test_linear_shear_cohesive_law.dir/test_linear_shear_cohesive_law.cc.o
+	deleted:    build/test/CMakeFiles/test_linear_shear_cohesive_law.dir/test_linear_shear_cohesive_law.cc.o.d
+	deleted:    build/test/CMakeFiles/test_material.dir/test_material.cc.o
+	deleted:    build/test/CMakeFiles/test_material.dir/test_material.cc.o.d
+	deleted:    build/test/CMakeFiles/test_mesh.dir/test_mesh.cc.o
+	deleted:    build/test/CMakeFiles/test_mesh.dir/test_mesh.cc.o.d
+	deleted:    build/test/CMakeFiles/test_nodal_field.dir/test_nodal_field.cc.o
+	deleted:    build/test/CMakeFiles/test_nodal_field.dir/test_nodal_field.cc.o.d
+	deleted:    build/test/CMakeFiles/test_parameter_reader.dir/test_parameter_reader.cc.o
+	deleted:    build/test/CMakeFiles/test_parameter_reader.dir/test_parameter_reader.cc.o.d
+	deleted:    build/test/CMakeFiles/test_precomputed_kernel.dir/test_precomputed_kernel.cc.o
+	deleted:    build/test/CMakeFiles/test_precomputed_kernel.dir/test_precomputed_kernel.cc.o.d
+	deleted:    build/test/CMakeFiles/test_preint_kernel.dir/test_preint_kernel.cc.o
+	deleted:    build/test/CMakeFiles/test_preint_kernel.dir/test_preint_kernel.cc.o.d
+	deleted:    build/test/CMakeFiles/test_rate_and_state_law.dir/test_rate_and_state_law.cc.o
+	deleted:    build/test/CMakeFiles/test_rate_and_state_law.dir/test_rate_and_state_law.cc.o.d
+	deleted:    build/test/CMakeFiles/test_static_communicator_mpi.dir/test_static_communicator_mpi.cc.o
+	deleted:    build/test/CMakeFiles/test_static_communicator_mpi.dir/test_static_communicator_mpi.cc.o.d
+	deleted:    build/test/CMakeFiles/test_unimat_shear_interface.dir/test_unimat_shear_interface.cc.o
+	deleted:    build/test/CMakeFiles/test_unimat_shear_interface.dir/test_unimat_shear_interface.cc.o.d
+	deleted:    build/test/test_barras_law
+	deleted:    build/test/test_bimat_interface
+	deleted:    build/test/test_defrig_interface
+	deleted:    build/test/test_dumper
+	deleted:    build/test/test_fftable_nodal_field
+	deleted:    build/test/test_half_space
+	deleted:    build/test/test_infinite_boundary
+	deleted:    build/test/test_interface
+	deleted:    build/test/test_kernel_collection
+	deleted:    build/test/test_limited_history
+	deleted:    build/test/test_linear_coulomb_friction_law
+	deleted:    build/test/test_linear_shear_cohesive_law
+	deleted:    build/test/test_material
+	deleted:    build/test/test_mesh
+	deleted:    build/test/test_nodal_field
+	deleted:    build/test/test_parameter_reader
+	deleted:    build/test/test_precomputed_kernel
+	deleted:    build/test/test_preint_kernel
+	deleted:    build/test/test_rate_and_state_law
+	deleted:    build/test/test_static_communicator_mpi
+	deleted:    build/test/test_unimat_shear_interface
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	build/CMakeFiles/Progress/
+	build/benchmarks/TPV103/CMakeFiles/TPV103-2d.dir/
+	build/benchmarks/TPV103/TPV103-2d.sh
+	build/benchmarks/TPV103/result_summary.py
+	build/src/CMakeFiles/uguca.dir/fftable_nodal_field.cc-a3440b05.o.tmp
+	build/src/CMakeFiles/uguca.dir/kernel.cc-cbb914cd.o.tmp
+	build/src/CMakeFiles/uguca.dir/limited_history.cc-f68b508d.o.tmp
+	build/src/CMakeFiles/uguca.dir/material.cc-063f9d06.o.tmp
+	build/src/CMakeFiles/uguca.dir/nodal_field.cc-0d675d88.o.tmp
+	build/src/CMakeFiles/uguca.dir/precomputed_kernel.cc-e095e333.o.tmp
+	build/src/CMakeFiles/uguca.dir/uca_parameter_reader.cc-f0298ef1.o.tmp
+
+no changes added to commit (use "git add" and/or "git commit -a")

@@ -61,12 +61,12 @@ int main(int argc, char *argv[]) {
   double dump_int = 0.1;
 
   unsigned nb_nodes_x = 360*2;
-  double time_step_factor = 0.35;
+  double time_step_factor = 0.1;
 
   unsigned s_dump = 0;
   unsigned nb_time_steps = 0;
 
-  unsigned n_pc = 1;
+  unsigned n_pc = 5;
 
   // ---------------------------------------------------------------------------
   // argument processing
@@ -176,7 +176,7 @@ int main(int argc, char *argv[]) {
   NodalField* ext_normal = interface.getNormalLoad();
   ext_shear->setAllValuesTo(shear_load);
   ext_normal->setAllValuesTo(normal_load);
-  //interface.getLoad(1)->setAllValuesTo(0.);
+  interface.getLoad(1)->setAllValuesTo(0.);
 
   // init velocity
   HalfSpace& top = interface.getTop();
