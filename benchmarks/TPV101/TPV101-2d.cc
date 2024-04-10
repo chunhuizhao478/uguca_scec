@@ -38,6 +38,8 @@
 #include <iomanip>
 #include <iostream>
 
+#include <random>
+
 #include "material.hh"
 #include "rate_and_state_law.hh"
 #include "static_communicator_mpi.hh"
@@ -123,7 +125,7 @@ int main(int argc, char *argv[]) {
 
   // initial conditions
   double normal_load = -120.0e6;
-  double shear_load = 75.0e6;
+  double shear_load = 75.0e6; //75.0e6; //the perturbation value will be given by weibull distribution and add to this value
   double V_init = 1.0e-12;
   double theta_init = 1.606238999213454e9;
 
@@ -172,6 +174,28 @@ int main(int argc, char *argv[]) {
   ext_normal->setAllValuesTo(normal_load);
   interface.getLoad(1)->setAllValuesTo(0.);
 
+  // ---------------------------------------------------------------------------
+  // Initialize random number generator
+  // weibull distribution for shear stress
+  std::default_random_engine generator;
+  std::weibull_distribution<double> wb_distribution(2.0,4e6); //double number = distribution(generator);
+  // uniform distribution for nucleation center
+  std::random_device rd;  // Will be used to obtain a seed for the random number engine
+  std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+  // Define the distribution, [0, 0.1]
+  std::uniform_real_distribution<> dis(-10e3, 10e3);   //double number = dis(gen);
+  // generate random vector
+  // shear stress
+  std::vector<double> shear_load_perturb_weibull(mesh.getNbNodes());
+  for (int i = 0; i < mesh.getNbNodes(); ++i) {
+    shear_load_perturb_weibull[i] = wb_distribution(generator);
+    std::cout<<shear_load_perturb_weibull[i] / 1e6<<std::endl;
+  }
+  // location of nucleation
+  double loc_perturb = dis(gen);
+  std::cout<<"loc_perturb: "<<loc_perturb<<std::endl;
+  // --------------------------------------------------------------------------- 
+
   // init velocity
   HalfSpace& top = interface.getTop();
   NodalField* velo0_top = top.getVelo(0);
@@ -209,6 +233,10 @@ int main(int argc, char *argv[]) {
   interface.init(true);
 
   // ---------------------------------------------------------------------------
+  // Convert the first argument to an integer (label)
+  int num = std::stoi(argv[1]);
+
+  // ---------------------------------------------------------------------------
   // dumping
   if (world_rank == 0) std::cout << "dump int = " << dump_int << std::endl;
 
@@ -217,7 +245,8 @@ int main(int argc, char *argv[]) {
             << "TPV101_Nx" << nb_nodes_x
             << "_s" << domain_factor
             << "_tf" << time_step_factor
-            << "_npc" << n_pc;
+            << "_npc" << n_pc
+            << "_num" << num;
   std::string bname = bname_out.str();
 
   if (world_rank == 0) std::cout << bname << std::endl;
@@ -229,14 +258,14 @@ int main(int argc, char *argv[]) {
   // interface.registerDumpField("cohesion_2");
 
   interface.registerDumpField("top_disp_0");
-  interface.registerDumpField("top_disp_1");
+  // interface.registerDumpField("top_disp_1");
   // interface.registerDumpField("top_disp_2");
 
   interface.registerDumpField("top_velo_0");
-  interface.registerDumpField("top_velo_1");
+  // interface.registerDumpField("top_velo_1");
   // interface.registerDumpField("top_velo_2");
 
-  // interface.registerDumpField("load_0");
+  interface.registerDumpField("load_0");
   // interface. registerDumpField("load_1");
   // interface.registerDumpField("load_2");
 
@@ -247,13 +276,17 @@ int main(int argc, char *argv[]) {
   // interface.registerDumpField("a");
   // interface.registerDumpField("b");
 
-  interface.dump(0, 0);
+  // interface.dump(0, 0);
   s_dump = dump_int / time_step + 1;
 
   if (world_rank == 0) std::cout << "simulation start..." << std::endl;
 
+  //check original case
+  //std::fill(shear_load_perturb_weibull.begin(), shear_load_perturb_weibull.end(), 0);
+  //loc_perturb = 0.0;
+
   // time stepping
-  for (unsigned s = 1; s <= nb_time_steps; ++s) {
+  for (unsigned s = 0; s <= nb_time_steps; ++s) { //change s from 0, so initial shear stress pertubation could be dumped
     if (world_rank == 0) {
       std::cout << "s=" << s << "/" << nb_time_steps << "\r";
       std::cout.flush();
@@ -261,15 +294,17 @@ int main(int argc, char *argv[]) {
     // nucleation
     double t = time_step * s;
     for (int i = 0; i < mesh.getNbNodes(); ++i) {
-      double x = std::abs((*coords[0])(i) - length_x / 2);
-      double r = std::sqrt(x * x);
+      double x = ((*coords[0])(i) - length_x / 2); //change the abs to have positive and negative 
+      double r = std::sqrt((x - loc_perturb) * (x - loc_perturb));
       double F = 0.0;
       if (r < R)
         F = std::exp(r * r / (r * r - R * R));
       double G = 1.0;
-      if (t < T)
+      if (t < T && t > 0)
 	      G = std::exp((t - T) * (t - T) / t / (t - 2.0 * T));
-      (*ext_shear)(i) = shear_load + delta_tau_0 * F * G;
+      if (t == 0) //if t = 0, no nucleation stress is added
+        G = 0.0;
+      (*ext_shear)(i) = shear_load + shear_load_perturb_weibull[i] + delta_tau_0 * F * G; //add perturbation
     }
 
     // time integration
