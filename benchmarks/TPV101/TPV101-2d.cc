@@ -177,7 +177,7 @@ int main(int argc, char *argv[]) {
   // ---------------------------------------------------------------------------
   // Initialize random number generator
   // weibull distribution for shear stress
-  std::default_random_engine generator;
+  // std::default_random_engine generator;
   std::weibull_distribution<double> wb_distribution(2.0,4e6); //double number = distribution(generator);
   // uniform distribution for nucleation center
   std::random_device rd;  // Will be used to obtain a seed for the random number engine
@@ -188,7 +188,7 @@ int main(int argc, char *argv[]) {
   // shear stress
   std::vector<double> shear_load_perturb_weibull(mesh.getNbNodes());
   for (int i = 0; i < mesh.getNbNodes(); ++i) {
-    shear_load_perturb_weibull[i] = wb_distribution(generator);
+    shear_load_perturb_weibull[i] = wb_distribution(gen);
     std::cout<<shear_load_perturb_weibull[i] / 1e6<<std::endl;
   }
   // location of nucleation
