@@ -57,12 +57,12 @@ You may run an example simulation by following these steps
 Detailed information can be found in the [online documentation](https://uguca.gitlab.io/uguca/)
 
 ## For tests in TPV101-2d ##
-(1)  Modify code in `uguca/benchmarks/TPV101/TPV101-2d`
-(2) `cd uguca`
-(3) `mkdir build; cd build;`
-(4) `cmake -DCMAKE_BUILD_TYPE:STRING=Release ..`
-(5) `make`
-(6) `cd uguca/build/benchmarks/TPV101`
-(7) `./TPV101-2d 0`
-(8) `python3 uguca/postprocess/decode.py`
+1.  Modify code in `uguca/benchmarks/TPV101/TPV101-2d`
+2. `cd uguca`
+3. `mkdir build; cd build;`
+4. `cmake -DCMAKE_BUILD_TYPE:STRING=Release ..`
+5. `make`
+6. `cd uguca/build/benchmarks/TPV101`
+7. `./TPV101-2d 0`
+8. `python3 uguca/postprocess/decode.py`
 Files are in the `uguca/postprocess/res`
