@@ -21,21 +21,27 @@ def read_full_data(path, nx, nt):
   file.close()
   return data
 
-totalnum = 10
+totalnum = 1
 for i in range(totalnum):
 
   print("postprocessing ... % :", ( i + 1 ) / totalnum * 100 )
 
-  full_path = "../build/benchmarks/TPV101/TPV101_Nx2880_s2.00_tf0.35_npc1_num"+str(i)+"-DataFiles" #100m
+  full_path = "../build/benchmarks/TPV101/TPV101_Nx2880_s2.00_tf0.35_npc0_num"+str(i)+"-DataFiles" #100m
 
-  veldata = read_full_data(full_path+"/top_velo_0.out", 2880, 149)
+  veldata = read_full_data(full_path+"/top_velo_0.out", 2880, 301)
 
-  # dispdata = read_full_data(full_path+"/top_disp_0.out", 2880, 149)
+  dispdata = read_full_data(full_path+"/top_disp_0.out", 2880, 301)
 
-  shearstress = read_full_data(full_path+"/load_0.out", 2880, 149)
+  shearstress = read_full_data(full_path+"/cohesion_0.out", 2880, 301)
+
+  theta = read_full_data(full_path+"/theta.out", 2880, 301)
 
   # print(np.shape(veldata))
 
   np.savetxt('./res/sliprate/sliprate'+str(i)+'.csv',2*veldata, delimiter=',', fmt='%.12f') #vel to sliprate
 
+  np.savetxt('./res/slip/slip'+str(i)+'.csv',2*dispdata, delimiter=',', fmt='%.12f') #disp to slip 
+
   np.savetxt('./res/shearstress/shearstress'+str(i)+'.csv',shearstress, delimiter=',', fmt='%.0f')
+
+  np.savetxt('./res/theta/theta'+str(i)+'.csv',theta, delimiter=',', fmt='%.0f')

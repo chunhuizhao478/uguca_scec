@@ -59,8 +59,8 @@ int main(int argc, char *argv[]) {
 
   double domain_factor = 2.0;
 
-  double duration = 15.0;
-  double dump_int = 0.1;
+  double duration = 15;
+  double dump_int = 0.05;
 
   unsigned nb_nodes_x = 360*2*2*2;
   double time_step_factor = 0.35;
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
   unsigned s_dump = 0;
   unsigned nb_time_steps = 0;
 
-  unsigned n_pc = 1;
+  unsigned n_pc = 0;
 
   // ---------------------------------------------------------------------------
   // argument processing
@@ -218,12 +218,13 @@ int main(int argc, char *argv[]) {
   // init theta
   for (int  i = 0; i < mesh.getNbNodes(); ++i) {
     (*theta)(i) = Dc / V0 * std::exp(((*a)(i)*std::log(
-          2.0 * std::sinh(shear_load / (*a)(i) / std::abs(normal_load)))
+          2.0 * std::sinh( (shear_load + shear_load_perturb_weibull[i]) / (*a)(i) / std::abs(normal_load)))
           - f0 - (*a)(i) * std::log(V_init / V0)) / (*b)(i));
   }
 
-  // time step
-  double time_step = time_step_factor * interface.getStableTimeStep();
+  // time step //use constant time step 25m / 6000m/s ~ 4e-3s ~ use 1e-3s
+  //double time_step = time_step_factor * interface.getStableTimeStep();
+  double time_step = 1e-3;
   interface.setTimeStep(time_step);
   nb_time_steps = std::ceil(duration / time_step);
 
@@ -277,7 +278,7 @@ int main(int argc, char *argv[]) {
   // interface.registerDumpField("b");
 
   // interface.dump(0, 0);
-  s_dump = dump_int / time_step + 1;
+  s_dump = dump_int / time_step;
 
   if (world_rank == 0) std::cout << "simulation start..." << std::endl;
 

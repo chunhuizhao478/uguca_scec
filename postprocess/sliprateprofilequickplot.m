@@ -1,8 +1,8 @@
 clear all; close all; clc;
 %% uguca results: sliprate
-datauguca = load("./res/sliprate/sliprate0.csv");
+datauguca = load("./sliprate/sliprate0.csv");
 filename2 = 'sliprate.gif';
-for i = 1:149
+for i = 1:301
 figure(1);
 plot(linspace(0,71975,2880)',datauguca(i,:)*2,'-k');hold on;
 hold off;
@@ -26,9 +26,9 @@ end
 end
 %% uguca results: shear stress
 clear all; close all; clc;
-datauguca = load("./res/shearstress/shearstress0.csv");
+datauguca = load("./shearstress/shearstress0.csv");
 filename2 = 'shearstress.gif';
-for i = 1:149
+for i = 1:301
 figure(1);
 plot(linspace(0,71975,2880)',datauguca(i,:),'-k');hold on;
 hold off;
@@ -51,9 +51,9 @@ imwrite(imind,cm,filename2,'gif','WriteMode','append','DelayTime',del);
 end
 end
 %% uguca results: slip
-datauguca = load("./res/slip/slip0.csv");
+datauguca = load("./slip/slip0.csv");
 filename2 = 'sliprate.gif';
-for i = 1:149
+for i = 1:301
 figure(1);
 plot(linspace(0,71975,2880)',datauguca(i,:)*2,'-k');hold on;
 hold off;
@@ -77,16 +77,16 @@ end
 end
 %% uguca results: statevar
 datauguca = load("./res/theta/theta0.csv");
-filename2 = 'theta.gif';
-for i = 1:149
+filename2 = 'sliprate.gif';
+for i = 1:301
 figure(1);
 plot(linspace(0,71975,2880)',datauguca(i,:)*2,'-k');hold on;
 hold off;
-xlim([21000 50650])
+xlim([0 71975])
 legend('uguca-25m','location','northeast',FontSize=10)
 title("SCEC Benchmark TPV101","FontSize",30)
 xlabel("Along Fault (m)","FontSize",25)
-ylabel("Slip (m)","FontSize",25)
+ylabel("theta (m)","FontSize",25)
 ax = gca;
 ax.FontSize = 15; 
 drawnow; pause(0.1)
